@@ -31,14 +31,14 @@
             <objects>
                 <viewController id="43f-Hh-6Wp" customClass="FloatingImageViewController" customModule="FloatingImageKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="mhG-P8-hVg">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="HmL-O6-5Xq">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpV-Yy-7rB" customClass="FloatingImageView" customModule="FloatingImageKit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="TKp-Da-Py4"/>
                                         <connections>
@@ -47,8 +47,8 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="L7n-sb-pmC"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Pxt-Nd-qAB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="L7n-sb-pmC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Pxt-Nd-qAB"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -92,7 +92,7 @@
                     </items>
                 </menu>
             </objects>
-            <point key="canvasLocation" x="-544" y="594"/>
+            <point key="canvasLocation" x="-444" y="694"/>
         </scene>
     </scenes>
 </document>

@@ -34,7 +34,13 @@ public class FloatingImageWindowController: NSWindowController
 
         let wc = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("FloatingImageWindowController")) as! FloatingImageWindowController
         (wc.contentViewController as! FloatingImageViewController).imageView.image = image
-        wc.window?.orderFront(nil)
+
+        if let window = wc.window {
+            window.orderFront(nil)
+            var newFrame = window.frame
+            newFrame.size = image.size
+            window.setFrame(newFrame, display: true)
+        }
         return wc
     }
     
