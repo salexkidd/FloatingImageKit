@@ -70,13 +70,13 @@
                 <customObject id="ey2-l8-4V7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="VAi-k9-5m4">
                     <items>
-                        <menuItem title="Toggle Shadow" state="on" id="lvy-14-Z1A">
+                        <menuItem title="Shadow" state="on" id="lvy-14-Z1A">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="toggleShadow:" target="wpV-Yy-7rB" id="E05-fX-xrZ"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Toggle Bezel" id="uQG-lX-Kwf">
+                        <menuItem title="Bezel" id="uQG-lX-Kwf">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="toggleBezel:" target="wpV-Yy-7rB" id="JC9-j5-rbp"/>
