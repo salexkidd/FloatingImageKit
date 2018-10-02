@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="2Ph-SM-KNk">
+            <objects>
+                <windowController storyboardIdentifier="FloatingImageWindowController" id="0Ry-Y9-41x" customClass="FloatingImageWindowController" customModule="FloatingImageKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="isD-El-0Pi" customClass="FloatingImageWindow" customModule="FloatingImageKit" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="555" y="608" width="598" height="447"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3200" height="1777"/>
+                        <connections>
+                            <outlet property="delegate" destination="0Ry-Y9-41x" id="cHk-Yf-hVQ"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="43f-Hh-6Wp" kind="relationship" relationship="window.shadowedContentViewController" id="GEK-Gu-Vf4"/>
+                    </connections>
+                </windowController>
+                <customObject id="gou-KU-Osk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246" y="10"/>
+        </scene>
+        <!--Floating Image View Controller-->
+        <scene sceneID="fUO-RA-1Zq">
+            <objects>
+                <viewController id="43f-Hh-6Wp" customClass="FloatingImageViewController" customModule="FloatingImageKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="mhG-P8-hVg">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="HmL-O6-5Xq">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpV-Yy-7rB" customClass="FloatingImageView" customModule="FloatingImageKit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="TKp-Da-Py4"/>
+                                        <connections>
+                                            <outlet property="menu" destination="VAi-k9-5m4" id="avp-dr-Dim"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="L7n-sb-pmC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Pxt-Nd-qAB"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HmL-O6-5Xq" firstAttribute="top" secondItem="mhG-P8-hVg" secondAttribute="top" id="240-j8-lDH"/>
+                            <constraint firstItem="HmL-O6-5Xq" firstAttribute="top" secondItem="mhG-P8-hVg" secondAttribute="top" id="2r1-cz-GSc"/>
+                            <constraint firstAttribute="trailing" secondItem="HmL-O6-5Xq" secondAttribute="trailing" id="48Y-ka-gW7"/>
+                            <constraint firstItem="HmL-O6-5Xq" firstAttribute="leading" secondItem="mhG-P8-hVg" secondAttribute="leading" id="GP9-aP-ePX"/>
+                            <constraint firstItem="HmL-O6-5Xq" firstAttribute="leading" secondItem="mhG-P8-hVg" secondAttribute="leading" id="VsE-eJ-9lg"/>
+                            <constraint firstAttribute="trailing" secondItem="HmL-O6-5Xq" secondAttribute="trailing" id="tgV-PC-YrS"/>
+                            <constraint firstAttribute="bottom" secondItem="HmL-O6-5Xq" secondAttribute="bottom" id="uiz-kT-Fvm"/>
+                            <constraint firstAttribute="bottom" secondItem="HmL-O6-5Xq" secondAttribute="bottom" id="yEs-fW-2G4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="wpV-Yy-7rB" id="XRG-g0-tFP"/>
+                    </connections>
+                </viewController>
+                <customObject id="ey2-l8-4V7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="VAi-k9-5m4">
+                    <items>
+                        <menuItem title="Toggle Shadow" state="on" id="lvy-14-Z1A">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="toggleShadow:" target="wpV-Yy-7rB" id="E05-fX-xrZ"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Toggle Bezel" id="uQG-lX-Kwf">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="toggleBezel:" target="wpV-Yy-7rB" id="JC9-j5-rbp"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="Cgk-3d-qIA"/>
+                        <menuItem title="Close" id="zZf-9F-aQr">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="orderOut:" target="ey2-l8-4V7" id="ujd-VV-YkY"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
+            </objects>
+            <point key="canvasLocation" x="-544" y="594"/>
+        </scene>
+    </scenes>
+</document>
